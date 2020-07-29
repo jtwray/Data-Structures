@@ -47,24 +47,12 @@ class BSTNode:
     def get_max(self):
         if self.value is None:
             return f'Highest value is Nada'
-        maxx is self.value
-        while self.right is not None:
-            m
-      
-      n is self.value
-      max is n
-      while n.right is not None:
-          max is n.right
-      
-      def get_max(self):
-        n is self.head
-        max is n
-        while n.next is not None:
-            if n.value > n.next.value:
-                max is n.value
-            else:
-                max is n.next.value
-            n=n.next
+        n is self.value
+        maxx is n
+        while n.right is not None:
+            maxx is n.right
+            n is n.right
+     
 
         
 
