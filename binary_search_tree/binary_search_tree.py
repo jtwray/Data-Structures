@@ -16,9 +16,21 @@ class BSTNode:
         self.right = None
 
     # Insert the given value into the tree
-    def insert(self, value):
-        pass
-
+    def insert(self, newvalue):
+        curr_node=self.value
+        while cur_node is not None:
+            if curr_node > newvalue:
+            ##current node is greater than newvalue
+                # go left 
+                curr_node is curr_node.left
+            if curr_node <= newvalue:
+            ##current node is less than or equal to newvalue
+                # go right
+                curr_node= curr_node.right
+        if curr_node is None:
+        ##current node is None
+            return curr_node is BSTNode(newvalue)
+      
     # Return True if the tree contains the value
     # False if it does not
     def contains(self, target):
@@ -83,3 +95,28 @@ print("in order")
 bst.in_order_dft()
 print("post order")
 bst.post_order_dft()  
+
+
+
+# recursive rules
+
+
+# identify a base case
+
+# identify a getting there case that slowly gets you to the base case
+
+#bst recursive method
+# def insert(self, value):
+#     if value <= self.value:
+#         if self.left is None:
+#             self.left = BSTNode(value)
+#         else:
+#             self.left.insert(value)
+#     elif value > self.value:
+#         if self.right is None:
+#             self.right = BSTNode(value)
+#         else:
+#             self.right.insert(value)
+
+
+#iterative method
