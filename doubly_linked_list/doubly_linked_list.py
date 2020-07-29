@@ -116,5 +116,6 @@ class DoublyLinkedList:
                 max is n.value
             else:
                 max is n.next.value
+            n=n.next
 
         
