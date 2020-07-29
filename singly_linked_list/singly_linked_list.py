@@ -21,9 +21,27 @@ class LinkedList:
     def __init__(self):
         self.head = None
         self.tail = None
-        self.length = None
+        self.length = 0
 
-    def add_to_head(self):
+    def get_max(self):
+        if self.head==None:
+            return None
+        elif self.head == self.tail:
+            return self.head.value
+        else:
+            cur_node = self.head.get_value()
+            
+
+            max=cur_node.get_value() or None
+            while cur_node is not self.tail:
+                if cur_node.value < cur_node.next_node.value:
+                    max=cur_node.get_next().get_value()
+                else:
+                    max=cur_node.get_value()
+                cur_node= cur_node.get_next
+
+
+    def add_to_head(self,value):
         new_node = Node(value, self.head)
         self.head = new_node
         # len==0
@@ -31,7 +49,7 @@ class LinkedList:
             self.tail = self.head
         self.length += 1
 
-    def add_to_tail(self):
+    def add_to_tail(self,value):
         new_node = Node(value)
         if self.tail is None and self.tail is None:
             self.head = new_node
@@ -61,7 +79,7 @@ class LinkedList:
         # len==0
         if self.tail is None:
             return None
-        elif self.tail = self.head:
+        elif self.tail == self.head:
             value = self.tail.get_value()
             self.tail = self.tail.get_next() or None
             self.length -= 1
@@ -73,6 +91,10 @@ class LinkedList:
                 SecondtoLast = self.next_node
             self.tail = SecondtoLast
             return f'The {type(value)} {value} was removed from our LinkedList{self}'
+
+LL=LinkedList()
+
+LL.add_to_head(1)
 # node
 # self value  next node
 # both default to None
@@ -90,34 +112,3 @@ class LinkedList:
 # set next
 # self head tail length
 
-
-
-#         '''
-
-#          === GOAL || add a new node to the LL head ===
-#          create a temp var
-#          assign it to new instance of Node class with known values
-#             -tempvar.value:value of new Node
-#             -tempvar.next_node: LL.self.head
-#         reassign LL.self.head to tempvar
-#             -LL.self.head:tempvar
-#         check LL.len
-#             - LL.len==0  (talking about LL.len attribute not the list method "len(list)"  LL.len could be called count to avoid confusion  )
-#                 LL.self.tail:LL.self.head
-#         in any case +1 to node count aka LL.self.len
-#             - LL.self.len += 1
-
-
-#             assign a temp var to new instance of Node using provided value and the current LL.self.head as next_node
-#             set LL.self.head to tempvar
-#             if LL.len == 0 assign the LL.tail to self.head
-#             add one to LL.count 
-#          assign a temp variable 'new_node' to an Instance of the Node class
-#             -value: x 
-#             -next_node:  self.head of Parent LinkedList
-
-#         reassign self.head Node of the Parent Linked List to the temp variable for the new node Instance
-#             check length of LinkedLIst
-#                 if 0
-#                     LL.self.tail assigns to temp var of new node also
-#                 Else length +=1 
